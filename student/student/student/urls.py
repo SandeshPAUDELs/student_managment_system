@@ -23,5 +23,10 @@ from django.conf import settings
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('<int:id>', views.view_faculties, name='view_faculties'),
+    path('add/', views.add, name='add'),
+    path('student/<int:id>/', views.student_details, name='student_details'),
+    path('edit/<int:id>/', views.edit, name='edit'),
+    path('delete/<int:id>/', views.delete, name='delete'),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
